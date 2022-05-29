@@ -67,4 +67,20 @@ public class MainTask extends AppCompatActivity {
 
 
     }
+
+    public MainTask() {
+        super();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        taskAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        taskAdapter.stopListening();
+    }
 }

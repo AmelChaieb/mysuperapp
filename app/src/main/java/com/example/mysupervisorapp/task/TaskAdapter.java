@@ -49,7 +49,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
         holder.nomAtelier.setText(taskHelperClass.getNomAtelier());
         holder.nomGroup.setText(taskHelperClass.getNomGroup());
         holder.nomChefEquipe.setText(taskHelperClass.getNomChefEquipe());
-        holder.status.setText(taskHelperClass.isComplete() ? "COMPLETED" : "UPCOMING");
+       // holder.status.setText(taskHelperClass.isComplete() ? "COMPLETED" : "UPCOMING");
         holder.options.setOnClickListener(view -> showPopUpMenu(view, position));
 
         try {

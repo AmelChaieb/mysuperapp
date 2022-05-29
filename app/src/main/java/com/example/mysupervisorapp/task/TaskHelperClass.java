@@ -1,13 +1,13 @@
 package com.example.mysupervisorapp.task;
 public class TaskHelperClass {
     String title,description,nomAtelier,nomGroup,nomChefEquipe,date, month, day ;
-    Boolean isComplete;
+
 
     TaskHelperClass(){
 
     }
 
-    public TaskHelperClass(String title, String description, String nomAtelier, String nomGroup, String nomChefEquipe, String date, String month, String day, Boolean isComplete) {
+    public TaskHelperClass(String title, String description, String nomAtelier, String nomGroup, String nomChefEquipe, String date, String month, String day) {
         this.title = title;
         this.description = description;
         this.nomAtelier = nomAtelier;
@@ -16,7 +16,7 @@ public class TaskHelperClass {
         this.date = date;
         this.month = month;
         this.day = day;
-        this.isComplete = isComplete;
+//        this.isComplete = isComplete;
     }
 
     public String getTitle() {
@@ -83,15 +83,5 @@ public class TaskHelperClass {
         this.day = day;
     }
 
-    public Boolean getComplete() {
-        return isComplete;
-    }
 
-    public void setComplete(Boolean complete) {
-        isComplete = complete;
-    }
-
-    public boolean isComplete() {
-        return isComplete;
-    }
 }
