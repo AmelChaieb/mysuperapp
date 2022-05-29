@@ -1,5 +1,6 @@
-package task;
+package com.example.mysupervisorapp.task;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,7 +87,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
         return new myViewHolder(view);
 
     }
-    class myViewHolder extends RecyclerView.ViewHolder {
+    static class myViewHolder extends RecyclerView.ViewHolder {
 
         TextView title, description, nomAtelier, nomGroup, nomChefEquipe, date, month, day,  status;
         ImageView options;
@@ -100,6 +101,8 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
             nomChefEquipe = itemView.findViewById(R.id.achefEq);
             status = itemView.findViewById(R.id.status);
             date = itemView.findViewById(R.id.date);
+            month = itemView.findViewById(R.id.month);
+            day = itemView.findViewById(R.id.day);
             options=itemView.findViewById(R.id.options);
 
 
@@ -109,24 +112,17 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
 
 
 
+    @SuppressLint("NonConstantResourceId")
     public void showPopUpMenu(View view, int position) {
         PopupMenu popupMenu = new PopupMenu(context, view);
         popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.menuDelete:
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context, R.style.AppTheme_Dialog);
-                    alertDialogBuilder.setTitle(R.string.delete_confirmation).setMessage(R.string.sureToDelete).
-                            setPositiveButton(R.string.yes, (dialog, which) -> {
-
-                                FirebaseDatabase.getInstance().getReference().child("task")
-                                        .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
-
-                            })
-                            .setNegativeButton(R.string.no, (dialog, which) -> dialog.cancel()).show();
-                    break;
-
-
+            if (item.getItemId() == R.id.menuDelete) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context, R.style.AppTheme_Dialog);
+                alertDialogBuilder.setTitle(R.string.delete_confirmation).setMessage(R.string.sureToDelete).
+                        setPositiveButton(R.string.yes, (dialog, which) -> FirebaseDatabase.getInstance().getReference().child("task")
+                                .child(Objects.requireNonNull(getRef(position).getKey())).removeValue())
+                        .setNegativeButton(R.string.no, (dialog, which) -> dialog.cancel()).show();
             }
             return false;
         });

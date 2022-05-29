@@ -1,4 +1,4 @@
-package task;
+package com.example.mysupervisorapp.task;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;

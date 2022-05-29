@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySupervisorApp">
         <activity
-            android:name="task.MainTask"
+            android:name=".task.MainTask"
             android:exported="false" />
         <activity
-            android:name="task.AddTask"
+            android:name=".task.AddTask"
             android:exported="false" />
         <activity
             android:name=".UpdateProfile"

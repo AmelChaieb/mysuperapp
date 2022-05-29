@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
-import task.AddTask;
-import task.MainTask;
+import com.example.mysupervisorapp.task.MainTask;
+
 
 public class MainActivity extends AppCompatActivity {
     Handler handler= new Handler();

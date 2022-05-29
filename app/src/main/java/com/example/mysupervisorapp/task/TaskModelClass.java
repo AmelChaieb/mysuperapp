@@ -1,23 +1,15 @@
-package task;
+package com.example.mysupervisorapp.task;
 
-public class TaskHelperClass {
-    String title,description,nomAtelier,nomGroup,nomChefEquipe,date, month, day ;
-    Boolean isComplete;
+public class TaskModelClass {
+    String title,description,nomAtelier,nomGroup,nomChefEquipe,date;
 
-    TaskHelperClass(){
-
-    }
-
-    public TaskHelperClass(String title, String description, String nomAtelier, String nomGroup, String nomChefEquipe, String date, String month, String day, Boolean isComplete) {
+    public TaskModelClass(String title, String description, String nomAtelier, String nomGroup, String nomChefEquipe, String date) {
         this.title = title;
         this.description = description;
         this.nomAtelier = nomAtelier;
         this.nomGroup = nomGroup;
         this.nomChefEquipe = nomChefEquipe;
         this.date = date;
-        this.month = month;
-        this.day = day;
-        this.isComplete = isComplete;
     }
 
     public String getTitle() {
@@ -66,33 +58,5 @@ public class TaskHelperClass {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getMonth() {
-        return month;
-    }
-
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    public Boolean getComplete() {
-        return isComplete;
-    }
-
-    public void setComplete(Boolean complete) {
-        isComplete = complete;
-    }
-
-    public boolean isComplete() {
-        return isComplete;
     }
 }
