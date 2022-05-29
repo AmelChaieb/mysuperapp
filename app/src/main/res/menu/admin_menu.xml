@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/accueil"
+            android:onClick="ClickAccueil"/>
+
+        <item android:id="@+id/nav_search"
+            android:title="@string/Search_text"
+            android:icon="@drawable/search"
+            android:onClick="Search"/>
+
+
+        <item android:id="@+id/nav_categorie"
+            android:title="@string/Categories"
+             />
+
+        <item android:id="@+id/nav_stat"
+            android:title="@string/statistics"
+            android:icon="@drawable/button_nav_stats_icon" />
+
+    </group>
+
+
+    <item android:title="profile">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/nav_"
+                    android:title="@string/home"
+                    android:icon="@drawable/button_nav_dashboard_icon" />
+
+                <item android:id="@+id/nav_profile"
+                    android:title="@string/profiles"
+                    android:icon="@drawable/button_nav_profile_icon" />
+
+
+                <item android:id="@+id/nav_logout"
+                    android:title="@string/logout"
+                    android:icon="@drawable/logout"/>
+
+
+
+            </group>
+
+        </menu>
+    </item>
+
+    <item android:title="categories">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/nav_i"
+                    android:title="@string/home"
+                    android:icon="@drawable/button_nav_dashboard_icon" />
+
+                <item android:id="@+id/nav_ii"
+                    android:title="@string/profiles"
+                    android:icon="@drawable/button_nav_profile_icon" />
+
+
+                <item android:id="@+id/nav_iii"
+                    android:title="@string/logout"
+                    android:icon="@drawable/logout"/>
+
+
+
+            </group>
+
+        </menu>
+    </item>
+
+</menu>

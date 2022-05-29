@@ -1,0 +1,50 @@
+<resources>
+    <string name="logo_name">My Supervisor App</string>
+    <string name="slogan_name">Bienvenue à SARTEX espace</string>
+
+    <!-- String for dashboard-->
+    <string name="ateliers">Ateliers</string>
+    <string name="machines">Machines</string>
+    <string name="profiles">Employés</string>
+    <string name="statistics">Statistiques</string>
+
+    <!--Titles and descriptions-->
+
+    <string name="FeaturedL">Toutes les groupes</string>
+    <string name="FeaturedLD" />
+    <string name="most_Viewed_Locations">Tout les Tâches</string>
+    <string name="Categories">Categories</string>
+    <string name="view_all">Voir Tout</string>
+    <string name="Search_text">Rechercher</string>
+    <string name="home">Accueil</string>
+    <string name="logout">Déconnexion</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--for the spinnner-->
+
+    <array name="etat_de_fonct">
+        <item>En marche</item>
+        <item>En repos</item>
+        <item>En panne</item>
+    </array>
+    <array name="type_panne">
+        <item>Panne Technique</item>
+        <item>Manque Alimentation</item>
+
+    </array>
+
+
+
+    <string name="delete_confirmation">Confirmation</string>
+    <string name="sureToDelete">Vous voulez vraiment supprimer cette tâche ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="confirmation">Tâche fait !..</string>
+    <string name="sureToMarkAsComplete">Vous voulez vraiment la marquer fait ?</string>
+    <string name="congrats_you_have_completed_the_task_successfully">Félécitations vous avez completez cette tâche ..</string>
+
+
+
+</resources>

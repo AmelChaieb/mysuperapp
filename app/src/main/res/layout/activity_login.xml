@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="20dp"
+    tools:context=".Login">
+
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="160dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logoimg"/>
+
+        <TextView
+            android:id="@+id/logo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/anton"
+            android:letterSpacing="0.1"
+            android:padding="10dp"
+            android:text="Bienvenue Connectez-vous  "
+            android:textColor="@color/card5"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:transitionName="logo_text" />
+
+        <TextView
+            android:id="@+id/slogan_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:letterSpacing="0.02"
+            android:padding="-30dp"
+            android:text="remplir champs pour continuer"
+            android:textColor="#7B879E"
+            android:textSize="17sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/username"
+            android:hint="Nom utilisateur"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/black"
+            app:startIconDrawable="@drawable/ic_baseline_person_24"
+            >
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_user_name_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:hint="Mot de passe"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2dp"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24">
+
+
+            <CheckBox
+                android:id="@+id/remember_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Se souvenir de moi" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_password_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/forget_pass"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="0dp"
+            android:background="#00000000"
+            android:elevation="0dp"
+            android:textColor="@color/black"
+            android:text="Avez-vous oublier votre mot de passe ?" />
+
+
+
+        android:onClick="loginUser"
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="loginUser"
+            android:background="@drawable/button_selector"
+            android:text="Connexion"
+            android:textColor="#E0E9FA" />
+        <ProgressBar
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+
+            android:elevation="8dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/white_circle">
+
+
+
+
+         </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

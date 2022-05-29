@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="20dp"
+    tools:context=".AddMachine">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp">
+
+        <ImageButton
+            android:id="@+id/arrowBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/arrow"
+            android:background="@color/white"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/anton"
+            android:letterSpacing="0.1"
+            android:text="Espace Machines"
+            android:textColor="#0B154C"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:transitionName=""/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter une machine"
+            android:textColor="#7B879E"
+            android:textSize="18sp"
+            android:layout_marginTop="-12dp"/>
+
+
+
+        <Spinner
+            android:id="@+id/spin_1"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="7dp"
+            android:entries="@array/etat_de_fonct"/>
+
+
+
+        <Spinner
+            android:id="@+id/spin_2"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="7dp"
+            android:entries="@array/type_panne"/>
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_nbHeure"
+            android:hint="Nombre d'heure"
+
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_pause"
+            android:hint="Temps de pause"
+
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_remplissage"
+            android:hint="Temps de remplissage"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        android:onClick="Ajout"
+        <Button
+            android:id="@+id/reg_btnA"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:onClick="Ajout"
+
+            android:text="Ajouter"
+            android:textColor="#E0E9FA"/>
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+   <!-- android:onClick="registerMachine"
+   android:onClick="registerMachine"-->
+
+
+
+
+
+
+
+</LinearLayout>

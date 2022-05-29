@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+
+
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img2"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+
+
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#0B154C"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/idMachine_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="ID Machine"
+            android:textColor="#0B154C"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/etatf_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idMachine_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="Etat de fonction"
+            android:textColor="#061A88"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/nbHeure_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etatf_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="Nombre d'heure"
+            android:textColor="#061A88"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/defPanne_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nbHeure_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="Type de panne"
+            android:textColor="#061A88"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tempsRemp_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/defPanne_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="temps de remplissage"
+            android:textColor="#061A88"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tempsDePause_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tempsRemp_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="temps de pause"
+            android:textColor="#061A88"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/userLastMod_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tempsDePause_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="Modifier par "
+            android:textColor="#061A88"
+            android:textSize="15sp" />
+
+
+        <LinearLayout
+            android:layout_marginTop="80dp"
+            android:layout_below="@+id/nbHeure_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_marginTop="12dp"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Modifier"
+                android:layout_marginRight="7dp"
+                android:id="@+id/editBtn"/>
+
+            <Button
+                android:layout_marginTop="12dp"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Supprimer"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/deleteBtn"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/button_nav_dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/button_nav_dashboard_icon"
+        app:cnb_backgroundColor="@color/card4"/>
+
+    <item
+        android:id="@+id/button_nav_manage"
+        android:title="Manage"
+        android:icon="@drawable/button_nav_manage_icon"
+        app:cnb_backgroundColor="@color/card4"/>
+
+    <item
+        android:id="@+id/button_nav_profile"
+        android:title="profile"
+        android:icon="@drawable/button_nav_profile_icon"
+        app:cnb_backgroundColor="@color/card4"/>
+
+    <item
+        android:id="@+id/button_nav_stat"
+        android:title="stat"
+        android:icon="@drawable/button_nav_stats_icon"
+        app:cnb_backgroundColor="@color/card4"/>
+
+</menu>

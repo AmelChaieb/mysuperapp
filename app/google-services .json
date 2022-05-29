@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "230580988182",
+    "firebase_url": "https://mysupervisorapp-default-rtdb.europe-west1.firebasedatabase.app/",
+    "project_id": "mysupervisorapp",
+    "storage_bucket": "mysupervisorapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230580988182:android:ff1bb99310b1a6d7308837",
+        "android_client_info": {
+          "package_name": "com.example.mysupervisorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230580988182-6m07p1qlk39p248cgq140hm3lqvb9utu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0JbpF8gd8zzVvECA4JubjGRzGfE41-Wk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230580988182-6m07p1qlk39p248cgq140hm3lqvb9utu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
