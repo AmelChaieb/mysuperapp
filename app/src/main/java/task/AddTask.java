@@ -177,11 +177,11 @@ public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDat
 
 
         reference= FirebaseDatabase.getInstance().getReference().child("task");
-       /* if(!validateTitre() |!validateDescription() | !validateNomAtelier() | !validateNomCE() | !validateGroup()
+        if(!validateTitre() |!validateDescription() | !validateNomAtelier() | !validateNomCE() | !validateGroup()
         | !validateDate())
         {
             return;
-        }*/
+        }
 
         //get all the values
         String title=regtitle.getText().toString();

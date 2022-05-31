@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     android:paddingRight="20dp"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/gradiet_task"
     android:paddingLeft="20dp"
-    tools:context="task.MainTask">
+    tools:context="task.MainTask"
+    >
 
     <FrameLayout
         android:layout_width="match_parent"

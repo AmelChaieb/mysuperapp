@@ -51,6 +51,28 @@
         <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/MySupervisorApp/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/MySupervisorApp/app/src/main/res/menu/search.xml" value="0.2" />
         <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/MySupervisorApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/drawable/button_selector.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/drawable/gradient_2.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/drawable/gradient_machine.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/drawable/gradient_user.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/drawable/gradiet_task.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/activity_add_ateliers.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/activity_add_machine.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/activity_add_task.xml" value="0.1296875" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/activity_admin.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/activity_macchine_list.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/activity_main_task.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/activity_users_list.xml" value="0.1296875" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/dialog_completed_theme.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/fragment_create_task.xml" value="0.1" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/item_task.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/machine_list_item.xml" value="0.2" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/menu_header.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/update_popup.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/update_popup_2.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/layout/user_list_item.xml" value="0.2" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/menu/admin_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/CHAIEB/AndroidStudioProjects/mysuperapp/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

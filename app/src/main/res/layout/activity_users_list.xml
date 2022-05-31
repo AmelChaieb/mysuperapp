@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UsersList">
+    tools:context=".UsersList"
+    android:background="@drawable/gradient_user">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
@@ -24,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:backgroundTint="#C0E0E4"
+        app:backgroundTint="#C9D1E6"
         app:layout_constraintBottom_toBottomOf="@+id/rv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.892"

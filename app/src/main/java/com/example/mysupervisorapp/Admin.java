@@ -24,6 +24,8 @@ public class Admin extends AppCompatActivity implements NavigationView.OnNavigat
 
    RecyclerView recyclerView;
    UserAdapter userAdapter;
+   RecyclerView featuredRecycler;
+
 
     //Drawer menu
     DrawerLayout drawerLayout;
@@ -48,6 +50,9 @@ public class Admin extends AppCompatActivity implements NavigationView.OnNavigat
 
 
         naviagtionDrawer();
+
+        //hooks
+
 
 
 

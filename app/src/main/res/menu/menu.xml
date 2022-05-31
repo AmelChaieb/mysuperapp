@@ -6,17 +6,17 @@
         android:id="@+id/menuDelete"
         android:title="Supprimer"
         app:showAsAction="ifRoom"
-        android:onClick="menuDelete"/>
+        />
 
     <item
         android:id="@+id/menuUpdate"
         android:title="Modifier"
         app:showAsAction="ifRoom"
-        android:onClick="menuUpdate"/>
+        />
 
     <item
         android:id="@+id/menuComplete"
         android:title="Complète"
         app:showAsAction="ifRoom"
-        android:onClick="menuComplete"/>
+        />
 </menu>

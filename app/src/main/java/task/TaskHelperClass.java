@@ -1,14 +1,15 @@
 package task;
 
 public class TaskHelperClass {
-    String title,description,nomAtelier,nomGroup,nomChefEquipe,date, month, day ;
-    Boolean isComplete;
+    String title,description,nomAtelier,nomGroup,nomChefEquipe,date, month, day,year ;
+
+
 
     TaskHelperClass(){
 
     }
 
-    public TaskHelperClass(String title, String description, String nomAtelier, String nomGroup, String nomChefEquipe, String date, String month, String day, Boolean isComplete) {
+    public TaskHelperClass(String title, String description, String nomAtelier, String nomGroup, String nomChefEquipe, String date, String month, String day, String year) {
         this.title = title;
         this.description = description;
         this.nomAtelier = nomAtelier;
@@ -17,7 +18,7 @@ public class TaskHelperClass {
         this.date = date;
         this.month = month;
         this.day = day;
-        this.isComplete = isComplete;
+        this.year = year;
     }
 
     public String getTitle() {
@@ -84,15 +85,11 @@ public class TaskHelperClass {
         this.day = day;
     }
 
-    public Boolean getComplete() {
-        return isComplete;
+    public String getYear() {
+        return year;
     }
 
-    public void setComplete(Boolean complete) {
-        isComplete = complete;
-    }
-
-    public boolean isComplete() {
-        return isComplete;
+    public void setYear(String year) {
+        this.year = year;
     }
 }
