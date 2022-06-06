@@ -4,18 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AteliersList">
+    tools:context=".MachineList"
+    android:paddingLeft="20dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvv"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/arrowBtnnAt"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                android:src="@drawable/arrow"
+                android:layout_marginTop="10dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Liste des Ateliers existantes "
+                android:textStyle="bold"
+                android:fontFamily="@font/anton"
+                android:letterSpacing="0.1"
+
+                android:textColor="#0B154C"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="790dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/atelier_rcv"
+                    android:layout_width="379dp"
+                    android:layout_height="569dp"
+                    android:layout_marginTop="80dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </ScrollView>
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="#E0E9FA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941"
+        app:srcCompat="@drawable/add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

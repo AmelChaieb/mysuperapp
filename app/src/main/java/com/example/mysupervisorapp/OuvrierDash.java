@@ -39,9 +39,7 @@ public class OuvrierDash extends AppCompatActivity {
                     case R.id.button_nav_dashboard:
                         fragment = new OuvrierDashFragment();
                         break;
-                    case R.id.button_nav_manage:
-                        fragment = new OuvrierManageFaragment();
-                        break;
+
                     case R.id.button_nav_profile:
                         fragment = new OuvrierProfileFragment();
                         break;

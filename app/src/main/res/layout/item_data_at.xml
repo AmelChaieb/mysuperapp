@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="160dp"
+    android:layout_height="300dp"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/featured_imgg"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/nomAtRech_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:text="Nom Atelier"
+            android:textColor="#000D7E"
+            android:textSize="20sp" />
+
+
+
+        <TextView
+            android:id="@+id/nomchefAtRech_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nom chef atelier "
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/nbrEqRech_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre des equipes "
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/nbrMaRech_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre des machines "
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

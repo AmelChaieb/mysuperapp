@@ -2,14 +2,14 @@ package com.example.mysupervisorapp;
 
 public class MachineModel
 {
-    String id_machine, lastUserMod,nbrHeure, temps_pause, temps_remplissage,defPanne, etat_de_fonct;
+    String id_machine, lastUserMod,nbrHeure, temps_pause, temps_remplissage,defPanne, etat_de_fonct,idMachine,atelier,surl;
 
 
     MachineModel(){
 
     }
 
-    public MachineModel(String id_machine, String lastUserMod, String nbrHeure, String temps_pause, String temps_remplissage, String defPanne, String etat_de_fonct) {
+    public MachineModel(String id_machine, String lastUserMod, String nbrHeure, String temps_pause, String temps_remplissage, String defPanne, String etat_de_fonct, String idMachine, String atelier, String surl) {
         this.id_machine = id_machine;
         this.lastUserMod = lastUserMod;
         this.nbrHeure = nbrHeure;
@@ -17,7 +17,11 @@ public class MachineModel
         this.temps_remplissage = temps_remplissage;
         this.defPanne = defPanne;
         this.etat_de_fonct = etat_de_fonct;
+        this.idMachine = idMachine;
+        this.atelier = atelier;
+        this.surl = surl;
     }
+
 
     public String getId_machine() {
         return id_machine;
@@ -73,5 +77,29 @@ public class MachineModel
 
     public void setEtat_de_fonct(String etat_de_fonct) {
         this.etat_de_fonct = etat_de_fonct;
+    }
+
+    public String getIdMachine() {
+        return idMachine;
+    }
+
+    public void setIdMachine(String idMachine) {
+        this.idMachine = idMachine;
+    }
+
+    public String getAtelier() {
+        return atelier;
+    }
+
+    public void setAtelier(String atelier) {
+        this.atelier = atelier;
+    }
+
+    public String getSurl() {
+        return surl;
+    }
+
+    public void setSurl(String surl) {
+        this.surl = surl;
     }
 }

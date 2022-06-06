@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingRight="20dp"
     android:orientation="vertical"
-    android:background="@drawable/gradiet_task"
+    android:background="@color/white"
     android:paddingLeft="20dp"
     tools:context="task.MainTask"
     >
@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tout les tâches"
                 fontPath="fonts/nunito_extra_bold.ttf"
+
                 android:textStyle="bold"
                 android:textColor="#0B154C"
                 android:textSize="28sp"
@@ -40,12 +41,7 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="right|center"
-            android:background="@drawable/calendar"
-            android:id="@+id/calendar"/>
+
 
     </FrameLayout>
 

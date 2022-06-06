@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AddWorker extends AppCompatActivity {
     //variables
-    TextInputLayout regName, regStatut, regEmail, regPhoneNo, regPassword;
+    TextInputLayout regName, regStatut, regEmail, regPhoneNo, regPassword, nomAtelier, numGrp,nomChef,surl;
     Button regBtn;
     ImageButton backBtn;
 
@@ -38,6 +38,10 @@ public class AddWorker extends AppCompatActivity {
         regEmail = findViewById(R.id.reg_email);
         regPhoneNo = findViewById(R.id.reg_phoneNo);
         regPassword = findViewById(R.id.reg_password);
+        nomAtelier=findViewById(R.id.reg_atName);
+        numGrp=findViewById(R.id.reg_grpNum);
+        nomChef=findViewById(R.id.reg_nameChefEq);
+        surl=findViewById(R.id.reg_surlEMp);
         regBtn = findViewById(R.id.reg_btn);
 
         backBtn=findViewById(R.id.arrowBtn);
@@ -165,10 +169,14 @@ public class AddWorker extends AppCompatActivity {
         String email = regEmail.getEditText().getText().toString();
         String phoneNo = regPhoneNo.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
+        String nom_at = nomAtelier.getEditText().getText().toString();
+        String nom_chef = nomChef.getEditText().getText().toString();
+        String num_grp = numGrp.getEditText().getText().toString();
+        String surll = surl.getEditText().getText().toString();
 
 
 
-            UserHelperClass helperClass = new UserHelperClass(name, statut, email, phoneNo, password);
+            UserHelperClass helperClass = new UserHelperClass(name, statut, email, phoneNo, password,nom_at,nom_chef,num_grp,surll);
             reference.child(password).setValue(helperClass);
             //show success message then finish the activity
             Toast.makeText(AddWorker.this, "l'ajout fais avec succés", Toast.LENGTH_SHORT).show();

@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class AddMachine extends AppCompatActivity {
 
-    TextInputLayout   regNbHeure, regTmpPause, regTmpRemplissage;
+    TextInputLayout   regNbHeure, regTmpPause, regTmpRemplissage, userlastmod,surl,nomat, idMach;
 
     Button regBtnAdd;
     ImageButton backBtn;
@@ -49,6 +49,10 @@ public class AddMachine extends AppCompatActivity {
         spinnerEtat=findViewById(R.id.spin_1);
         spinnerPanne=findViewById(R.id.spin_2);
         regBtnAdd=findViewById(R.id.reg_btnA);
+        userlastmod=findViewById(R.id.reg_userlastmod);
+        surl=findViewById(R.id.reg_surlMa);
+        nomat=findViewById(R.id.reg_nameAt);
+        idMach=findViewById(R.id.reg_idMachine);
 
 
 
@@ -122,12 +126,18 @@ public class AddMachine extends AppCompatActivity {
         String temps_pause = Objects.requireNonNull(regTmpPause.getEditText()).getText().toString();
         String temps_remplissage = Objects.requireNonNull(regTmpRemplissage.getEditText()).getText().toString();
         String etat_de_fonct=spinnerEtat.getSelectedItem().toString();
+        String surll = Objects.requireNonNull(surl.getEditText()).getText().toString();
+        String userlastmodd = Objects.requireNonNull(userlastmod.getEditText()).getText().toString();
+        String nomAtelier=Objects.requireNonNull(nomat.getEditText()).getText().toString();
+        String idMachine=Objects.requireNonNull(idMach.getEditText()).getText().toString();
+
+
 
         String defPanne = spinnerPanne.getSelectedItem().toString();
 
 
         //MachineHelperClasse helperClass = new MachineHelperClasse(defPanne, lastUserMod,nbrHeure, temps_pause, temps_remplissage);
-        MachineHelperClasse helperClass= new MachineHelperClasse(nbrHeure, temps_pause, temps_remplissage, etat_de_fonct, defPanne);
+        MachineHelperClasse helperClass= new MachineHelperClasse(nbrHeure, temps_pause, temps_remplissage, etat_de_fonct, defPanne,surll,userlastmodd,nomAtelier,idMachine);
 
         String id_machine=reference.push().getKey();
         reference.child(id_machine).setValue(helperClass);

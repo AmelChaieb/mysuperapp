@@ -10,9 +10,10 @@
 
     <!--Titles and descriptions-->
 
-    <string name="FeaturedL">Toutes les groupes</string>
+    <string name="FeaturedL">Les Chefs Ateliers</string>
     <string name="FeaturedLD" />
-    <string name="most_Viewed_Locations">Tout les Tâches</string>
+    <string name="most_Viewed_Locations">Les Chefs
+        des équipes</string>
     <string name="Categories">Categories</string>
     <string name="view_all">Voir Tout</string>
     <string name="Search_text">Rechercher</string>
@@ -32,9 +33,18 @@
     <array name="type_panne">
         <item>Panne Technique</item>
         <item>Manque Alimentation</item>
+        <item>Pas de panne</item>
+
+    </array>
+    <array name="task">
+        <item>FAIT</item>
+        <item>A REPERER</item>
+
 
     </array>
 
+
+    <string name="rech">Rechercher</string>
 
 
     <string name="delete_confirmation">Confirmation</string>
@@ -44,7 +54,6 @@
     <string name="confirmation">Tâche fait !..</string>
     <string name="sureToMarkAsComplete">Vous voulez vraiment la marquer fait ?</string>
     <string name="congrats_you_have_completed_the_task_successfully">Félécitations vous avez completez cette tâche ..</string>
-
 
 
 </resources>

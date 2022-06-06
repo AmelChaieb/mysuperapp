@@ -8,10 +8,12 @@ import java.util.HashMap;
 public class SessionManager {
 
 
+    public static final String SSESSIONN_USERSESSION = "userLoginSessionn";
     SharedPreferences.Editor editor;
     SharedPreferences userSession;
 
     Context context;
+
 
     public static final String SESSION_USERSESSION="userLoginSession";
     public static final String SESSION_REMEMBERME="rememberMe";
@@ -31,6 +33,10 @@ public class SessionManager {
     public static final String KEY_SESSIONNAME="name";
     public static final String KEY_SESSIONPASSWORD="password";
 
+    //
+    private static final String ISS_LOGIN="IsLoggedIn";
+    public static final String KEY_FULLNAMEE="name";
+
 
     public SessionManager(Context _context, String sessionName){
         context =_context;
@@ -45,14 +51,14 @@ public class SessionManager {
     session
      */
 
-    public void createLoginSession(String name, String email, String password, String phoneNo, String statut){
+    public void createLoginSession(String name){
 
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_FULLNAME,name);
-        editor.putString(KEY_EMAIL,email);
-        editor.putString(KEY_PASSWORD,password);
-        editor.putString(KEY_PHONE,phoneNo);
-        editor.putString(KEY_STATUT,statut);
+      //  editor.putString(KEY_EMAIL,email);
+        //editor.putString(KEY_PASSWORD,password);
+      //  editor.putString(KEY_PHONE,phoneNo);
+       // editor.putString(KEY_STATUT,statut);
 
         editor.commit();
     }
@@ -60,10 +66,10 @@ public class SessionManager {
     public HashMap<String,String> getUserDetailFromSession(){
         HashMap<String,String> userData=new HashMap<>();
         userData.put(KEY_FULLNAME,userSession.getString(KEY_FULLNAME,null));
-        userData.put(KEY_EMAIL,userSession.getString(KEY_EMAIL,null));
-        userData.put(KEY_PASSWORD,userSession.getString(KEY_PASSWORD,null));
-        userData.put(KEY_PHONE,userSession.getString(KEY_PHONE,null));
-        userData.put(KEY_STATUT,userSession.getString(KEY_STATUT,null));
+        //userData.put(KEY_EMAIL,userSession.getString(KEY_EMAIL,null));
+        //userData.put(KEY_PASSWORD,userSession.getString(KEY_PASSWORD,null));
+       // userData.put(KEY_PHONE,userSession.getString(KEY_PHONE,null));
+       // userData.put(KEY_STATUT,userSession.getString(KEY_STATUT,null));
 
         return userData;
 
@@ -99,12 +105,12 @@ public class SessionManager {
     public HashMap<String,String> getRemeberMeDetailsFromSession(){
 
 
-        HashMap<String,String> userData=new HashMap<>();
-        userData.put(KEY_SESSIONNAME,userSession.getString(KEY_SESSIONNAME,null));
-        userData.put(KEY_SESSIONPASSWORD,userSession.getString(KEY_SESSIONPASSWORD,null));
+        HashMap<String,String> userDataa=new HashMap<>();
+        userDataa.put(KEY_SESSIONNAME,userSession.getString(KEY_SESSIONNAME,null));
+        userDataa.put(KEY_SESSIONPASSWORD,userSession.getString(KEY_SESSIONPASSWORD,null));
 
 
-        return userData;
+        return userDataa;
 
     }
 
@@ -119,6 +125,25 @@ public class SessionManager {
 
 
     }
+
+
+    public void createLoginSessionn(String name) {
+        editor.putBoolean(ISS_LOGIN, true);
+        editor.putString(KEY_FULLNAMEE,name);
+        editor.commit();
+    }
+
+    public HashMap<String,String> getLoginSessionn(){
+
+
+        HashMap<String,String> userDataaa=new HashMap<>();
+        userDataaa.put(KEY_SESSIONNAME,userSession.getString(KEY_FULLNAMEE,null));
+
+        return userDataaa;
+
+    }
+
+
 
 
 }

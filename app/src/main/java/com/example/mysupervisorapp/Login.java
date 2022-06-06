@@ -27,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Objects;
 
+import chef_maintenance_activities.TechnicienMaintenanceDash;
+
 public class Login extends AppCompatActivity {
     Button loginBtn, forgetPass;
     TextView logoText, sloganText;
@@ -116,8 +118,11 @@ public class Login extends AppCompatActivity {
         if(rememberMe.isChecked()){
             SessionManager sessionManager=new SessionManager(Login.this,SessionManager.SESSION_REMEMBERME);
             sessionManager.createRememberMeSession(userEnteredUsername,userEnteredPassword);
-
         }
+
+
+
+
 
 
         Query checkUser = FirebaseDatabase.getInstance().getReference("users").orderByChild("name").equalTo(userEnteredUsername);
@@ -144,8 +149,8 @@ public class Login extends AppCompatActivity {
                                 String _phoneNo=snapshot.child(userEnteredPassword).child("phoneNo").getValue(String.class);
                                 String _statut=snapshot.child(userEnteredPassword).child("statut").getValue(String.class);
 
-                                SessionManager sessionManager=new SessionManager(Login.this,SessionManager.SESSION_USERSESSION);
-                                sessionManager.createLoginSession(_fullname, _email, _password, _phoneNo, _statut);
+                                SessionManager sessionManager=new SessionManager(Login.this,SessionManager.SSESSIONN_USERSESSION);
+                                sessionManager.createLoginSession(_fullname);
                                 //Intent intent = new Intent(Login.this, Admin.class);
                                 startActivity(new Intent(getApplicationContext(),UpdateProfile.class));
 
@@ -160,7 +165,7 @@ public class Login extends AppCompatActivity {
                         else {
                             password.setError(null);
                             password.setErrorEnabled(false);
-                            Intent intent = new Intent(Login.this, OuvrierDash.class);
+                            Intent intent = new Intent(Login.this, TechnicienMaintenanceDash.class);
                             startActivity(intent);
 
 
@@ -191,6 +196,9 @@ public class Login extends AppCompatActivity {
 
 
         });
+
+
+
        }
 
 }

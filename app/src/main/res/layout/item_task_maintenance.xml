@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="10dp"
+    app:contentPadding="10dp"
+    android:layout_height="170dp"
+
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/dayMaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0.5"
+                android:text="Tue"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/yearMaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="18"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/monthMaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0.5"
+                android:text="Nov"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@android:color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img5"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+
+
+
+                    app:civ_border_color="#0B154C"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="FAIT"
+                    android:singleLine="true"
+                    android:textSize="23sp"
+                    android:textColor="#00A500"
+                    android:layout_weight="1"
+                    android:id="@+id/warning"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/optionsMaint"
+                    android:layout_width="26dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/edit" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Nom atelier"
+                android:singleLine="true"
+                android:alpha="0.5"
+                android:id="@+id/nomAtMaint"
+                android:textSize="19sp"
+                android:textColor="#1A2D8A"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Description"
+                android:singleLine="true"
+                android:alpha="0.5"
+                android:id="@+id/descripTacheMaint"
+                android:textSize="17sp"
+                android:textColor="#0B154C"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Complèter par"
+                android:singleLine="true"
+                android:alpha="0.5"
+                android:id="@+id/completedBy"
+                android:textSize="12sp"
+                android:textColor="#3D938B"/>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

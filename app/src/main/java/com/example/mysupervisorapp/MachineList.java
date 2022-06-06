@@ -39,7 +39,7 @@ public class MachineList extends AppCompatActivity {
 
         machineAdapter = new MachineAdapter(options);
         recyclerView.setAdapter(machineAdapter);
-        floatingActionButton = findViewById(R.id.floatingActionButton);
+        floatingActionButton = findViewById(R.id.floatingActionButtonMachine);
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +87,7 @@ public class MachineList extends AppCompatActivity {
 
         FirebaseRecyclerOptions<MachineModel> options =
                 new FirebaseRecyclerOptions.Builder<MachineModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("machine").orderByChild("id_machine").startAt(str).endAt(str + "~"), MachineModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("machine").orderByChild("defPanne").startAt(str).endAt(str + "~"), MachineModel.class)
                         .build();
 
         machineAdapter = new MachineAdapter(options);

@@ -23,12 +23,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp">
 
-        <ImageButton
-            android:id="@+id/arrowBtn"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/arrow"
-            android:background="@color/white"/>
+
 
         <TextView
 
@@ -37,9 +32,9 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/anton"
             android:letterSpacing="0.1"
-            android:text="Espace Machines"
+            android:text="Mise à jour sur les machines"
             android:textColor="#0B154C"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:transitionName=""/>
 
@@ -119,6 +114,62 @@
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_nameAt"
+            android:hint="Nom atelier"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_surlMa"
+            android:hint="url image"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_userlastmod"
+            android:hint="modifier par"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_idMachine"
+            android:hint="Nom machine"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
 
 

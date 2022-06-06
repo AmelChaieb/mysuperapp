@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#FFFFFF"
     android:padding="20dp"
-    tools:context=".AddMachine">
+    tools:context=".AddAteliers">
 
 
 
@@ -24,7 +24,7 @@
             android:layout_marginBottom="0dp">
 
             <ImageButton
-                android:id="@+id/arrowBtn"
+                android:id="@+id/arrowBtnAt"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/arrow"
@@ -59,38 +59,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/reg_Atelier"
-                android:hint="ID Ateliers"
+                android:hint="Nom Atelier"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="40dp"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/reg_statut"
-                android:hint="Etat de fonction"
-
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"/>
-
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/reg_nbMachine"
+                android:id="@+id/reg_nbMachineAt"
                 android:hint="Nombre Machines "
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
@@ -105,7 +94,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/reg_nbHeure"
+                android:id="@+id/reg_nbgrp"
                 android:hint="Nombre des équipes"
 
 
@@ -121,8 +110,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/reg_pause"
-                android:hint="Nombre des employé"
+                android:id="@+id/reg_nomChefAt"
+                android:hint="Nom Chef Atelier"
 
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -137,8 +126,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/reg_remplissage"
-                android:hint="Temps de remplissage"
+                android:id="@+id/reg_surlAt"
+                android:hint="url image"
 
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -149,6 +138,8 @@
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -158,20 +149,15 @@
 
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                />
+            android:onClick="AjouterAt"
             <Button
-                android:id="@+id/reg_btn"
-                android:layout_marginTop="20dp"
+                android:id="@+id/reg_Ajbtn"
+                android:layout_marginTop="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_selector"
-
+                android:onClick="AjouterAt"
                 android:text="Ajouter"
                 android:textColor="#E0E9FA"/>
 

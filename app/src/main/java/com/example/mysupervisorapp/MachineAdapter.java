@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -50,6 +51,16 @@ public class MachineAdapter extends FirebaseRecyclerAdapter<MachineModel,Machine
         holder.tmpPause.setText(model.getTemps_pause());
         holder.tmpRemplissage.setText(model.getTemps_remplissage());
         holder.typePanne.setText(model.getDefPanne());
+        holder.atelier.setText(model.getAtelier());
+        Glide.with(holder.img.getContext())
+                .load(model.getSurl())
+                .placeholder(R.drawable.common_google_signin_btn_icon_dark).
+                circleCrop()
+                .error(R.drawable.common_google_signin_btn_icon_dark_normal).
+                into(holder.img);
+
+
+
 
         //Glide.with(holder.img.getContext())
         //      .load(model.getSu)
@@ -74,6 +85,7 @@ public class MachineAdapter extends FirebaseRecyclerAdapter<MachineModel,Machine
                 EditText nbrHeure = view.findViewById(R.id.txtnbHeure);
                 EditText temps_remplissage = view.findViewById(R.id.txtRemplissage);
                 EditText lastUserMod = view.findViewById(R.id.txtModif);
+                EditText nameAt = view.findViewById(R.id.nameat);
 
 
 
@@ -85,6 +97,7 @@ public class MachineAdapter extends FirebaseRecyclerAdapter<MachineModel,Machine
                 temps_remplissage.setText(model.getTemps_remplissage());
                 nbrHeure.setText(model.getNbrHeure());
                 lastUserMod.setText(model.getLastUserMod());
+                nameAt.setText(model.getAtelier());
 
 
                 dialogPlus.show();
@@ -105,6 +118,7 @@ public class MachineAdapter extends FirebaseRecyclerAdapter<MachineModel,Machine
                         map.put("temps_remplissage", temps_remplissage.getText().toString());
                         map.put("lastUserMod", lastUserMod.getText().toString());
                         map.put("nbrHeure", nbrHeure.getText().toString());
+                        map.put("atelier", nameAt.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("machine")
                                 .child(getRef(holder.getAdapterPosition()).getKey())
@@ -185,7 +199,7 @@ public class MachineAdapter extends FirebaseRecyclerAdapter<MachineModel,Machine
      class myViewHolder extends RecyclerView.ViewHolder{
 
         CircleImageView img;
-        TextView  etatMachine, typePanne,nbrHeure ,tmpPause, tmpRemplissage, lastUserMod;
+        TextView  etatMachine, typePanne,nbrHeure ,tmpPause, tmpRemplissage, lastUserMod,atelier,idMachine;
         Button btnEdit, btnDelete;
 
 
@@ -200,6 +214,8 @@ public class MachineAdapter extends FirebaseRecyclerAdapter<MachineModel,Machine
             tmpPause= itemView.findViewById(R.id.tempsDePause_txt);
             tmpRemplissage= itemView.findViewById(R.id.tempsRemp_txt);
             lastUserMod= itemView.findViewById(R.id.userLastMod_txt);
+            atelier=itemView.findViewById(R.id.nomAte_txt);
+            idMachine=itemView.findViewById(R.id.idMach_txt);
 
 
             btnEdit= itemView.findViewById(R.id.editBtn);

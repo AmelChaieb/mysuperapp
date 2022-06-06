@@ -49,10 +49,16 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
         holder.name.setText(model.getName());
         holder.email.setText(model.getEmail());
         holder.statut.setText(model.getStatut());
+        holder.cin.setText(model.getPassword());
+        holder.nomAt.setText(model.getNomAtelier());
+        holder.nomChefEq.setText(model.getNomChefEquipe());
 
-        //Glide.with(holder.img.getContext())
-          //      .load(model.getSu)
-
+        Glide.with(holder.img.getContext())
+                .load(model.getSurl())
+                .placeholder(R.drawable.common_google_signin_btn_icon_dark).
+                circleCrop()
+                .error(R.drawable.common_google_signin_btn_icon_dark_normal).
+                into(holder.img);
 
 
 
@@ -71,8 +77,11 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
                 EditText email=view.findViewById(R.id.txtEmail);
                 EditText phone=view.findViewById(R.id.txtPhoneNo);
                 EditText statut=view.findViewById(R.id.txtStatut);
-                EditText password=view.findViewById(R.id.txtPassword);
-               // EditText Surl=view.findViewById(R.id.txtImageUrl);
+                EditText nom_at=view.findViewById(R.id.nomAtUt_txt);
+                EditText numGrp=view.findViewById(R.id.numGrpUt_txt);
+                EditText cin=view.findViewById(R.id.txtPassword);
+                EditText nomChef_at=view.findViewById(R.id.nomCheEqUt_txt);
+                EditText Surl=view.findViewById(R.id.surlUt_txt);
 
                 Button btnUpdate=view.findViewById(R.id.BtnUpdate);
 
@@ -80,9 +89,12 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
                 email.setText(model.getEmail());
                 statut.setText(model.getStatut());
                 phone.setText(model.getPhoneNo());
-                password.setText(model.getPassword());
+                cin.setText(model.getPassword());
+                nom_at.setText(model.getNomAtelier());
+                numGrp.setText(model.getNumGroupe());
+                nomChef_at.setText(model.getNomChefEquipe());
 
-                //Surl.setText(model.getSurl());
+                Surl.setText(model.getSurl());
                 dialogPlus.show();
 
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -92,8 +104,10 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
                         map.put("name", name.getText().toString());
                         map.put("email", email.getText().toString());
                         map.put("statut", statut.getText().toString());
-                        map.put("password", password.getText().toString());
-                        map.put("phoneNo", phone.getText().toString());
+                        map.put("password", cin.getText().toString());
+                        map.put("nomChefEquipe", nomChef_at.getText().toString());
+                        map.put("nomAtelier", nom_at.getText().toString());
+                        map.put("NumGroupe", numGrp.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("users")
                                 .child(getRef(holder.getAdapterPosition()).getKey())
@@ -174,7 +188,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
 
 
         CircleImageView img;
-        TextView name, statut, email;
+        TextView name, statut, email,nomAt,nomChefEq,cin;
 
         Button btnEdit, btnDelete;
 
@@ -185,6 +199,9 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
             name=(TextView)itemView.findViewById(R.id.name_txt);
             statut=(TextView)itemView.findViewById(R.id.statut_txt);
             email=(TextView)itemView.findViewById(R.id.email_txt);
+            nomAt=itemView.findViewById(R.id.nomAtelierUt);
+            nomChefEq=itemView.findViewById(R.id.nomChefUt);
+            cin=itemView.findViewById(R.id.cinUt);
 
             btnEdit=(Button)itemView.findViewById(R.id.editBtn);
             btnDelete=(Button)itemView.findViewById(R.id.deleteBtn);

@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mysupervisorapp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySupervisorApp">
+        <activity
+            android:name="chef_atelier_activities.MainActChefAt"
+            android:exported="false" />
+        <activity
+            android:name="chef_maintenance_activities.TechnicienMaintenanceDash"
+            android:exported="false" />
+        <activity
+            android:name="searchAdmin.SearchAdmin"
+            android:exported="false" />
         <activity
             android:name="task.MainTask"
             android:exported="false" />

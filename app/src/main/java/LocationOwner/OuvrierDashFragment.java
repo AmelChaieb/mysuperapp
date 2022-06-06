@@ -19,5 +19,6 @@ public class OuvrierDashFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ouvrier_dash2, container, false);
+
     }
 }

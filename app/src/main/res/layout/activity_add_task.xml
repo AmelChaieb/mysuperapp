@@ -27,26 +27,21 @@
                 android:src="@drawable/arrow"
                 android:background="@color/white"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/ic_add_black_24dp"
-                android:scaleType="centerCrop" />
+
 
             <TextView
                 fontPath="fonts/nunito_extra_bold.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/anton"
                 android:letterSpacing="0.1"
-                android:text="Ajouter Une Tâche"
+                android:text="Ajouter une tâche"
+                android:textStyle="bold"
 
                 android:textColor="#0B154C"
-                android:textSize="22sp"
+                android:textSize="40sp"
                 tools:ignore="MissingPrefix" />
 
             <TextView
@@ -57,7 +52,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Remplir les champs vides pour ajouter une tâche"
                 android:textAlignment="center"
-                android:textColor="#6E737E"
+                android:textColor="#7B879E"
                 android:alpha="0.8"
                 android:textSize="18sp"
                 tools:ignore="MissingPrefix" />
@@ -215,7 +210,7 @@
                 android:text="Ajouter"
                 android:onClick="Ajouter"
                 android:background="@drawable/button_selector"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:layout_marginTop="40dp" />
 
         </LinearLayout>

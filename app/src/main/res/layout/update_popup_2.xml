@@ -160,6 +160,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:text="nom atelier"
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:textSize="14sp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:background="@drawable/btn_border"
+            android:padding="10dp"
+            android:id="@+id/nameat"
+            tools:ignore="MissingPrefix"
+            android:textColor="#0B154C"/>
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Modifier par"
             tools:ignore="MissingPrefix" />
 

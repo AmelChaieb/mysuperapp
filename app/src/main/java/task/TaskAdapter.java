@@ -3,7 +3,9 @@ package task;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mysupervisorapp.R;
@@ -37,14 +40,20 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-
-public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAdapter.myViewHolder>  {
+@RequiresApi(api = Build.VERSION_CODES.N)
+public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAdapter.myViewHolder> implements DatePickerDialog.OnDateSetListener {
     Locale id = new Locale("fr", "ID");
     public SimpleDateFormat dateFormat = new SimpleDateFormat("EE dd MMM yyyy", Locale.US);
     public SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMMM-yyyy", id);
-    Date date = null;
-    String outputDateString = null;
-     private MainTask context;
+    Date date ;
+    Calendar calendar = Calendar.getInstance();
+    String datemod;
+    int year;
+    int month;
+    int dayOfMonth;
+    DatePicker dv;
+    Context contextD;
+    private MainTask context;
     PopupMenu popupMenu;
     private int position;
 
@@ -68,12 +77,14 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
         holder.nomGroup.setText(taskHelperClass.getNomGroup());
         holder.nomChefEquipe.setText(taskHelperClass.getNomChefEquipe());
 
+
+
        // holder.status.setText(taskHelperClass.isComplete() ? "COMPLETED" : "UPCOMING");
 
 
         holder.options.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)  {
                 popupMenu = new PopupMenu(v.getContext(),v);
                 popupMenu.getMenuInflater().inflate(R.menu.menu,popupMenu.getMenu());
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -108,7 +119,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
                             EditText _nomGroup=view.findViewById(R.id.modifTaskGroup);
                             EditText _nomAtelier=view.findViewById(R.id.modifTaskAtelier);
                             EditText _nomChefEquipe=view.findViewById(R.id.modifTaskCE);
-                            EditText _dateMod=view.findViewById(R.id.modifTaskDate);
+                            EditText _dateMod = view.findViewById(R.id.modifTaskDate);
 
                             Button _date=view.findViewById(R.id.dateBtnModif);
 
@@ -119,10 +130,22 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
                            _nomGroup.setText(taskHelperClass.getNomGroup());
                            _nomAtelier.setText(taskHelperClass.getNomAtelier());
                            _nomChefEquipe.setText(taskHelperClass.getNomChefEquipe());
+                          // _dateMod.setText(taskHelperClass.getDate());
 
 
 
                            dialogPlus.show();
+                            _date.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    showDatePickerDialog(v);
+
+                                }
+                            });
+                            //onDateSet(dv,year,month,dayOfMonth);
+                            _dateMod.setText(simpleDateFormat.format(calendar.getTime()));
+
 
                            _updateTask.setOnClickListener(new View.OnClickListener() {
                                @Override
@@ -131,12 +154,17 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
 
                                    Map<String, Object> map = new HashMap<>();
 
-                                   map.put("date", _date.getText().toString());
+
                                    map.put("description", _description.getText().toString());
                                    map.put("nomAtelier", _nomAtelier.getText().toString());
                                    map.put("nomChefEquipe", _nomChefEquipe.getText().toString());
                                    map.put("nomGroup", _nomGroup.getText().toString());
                                    map.put("title", _titre.getText().toString());
+
+
+                                   map.put("date", _dateMod.getText().toString());
+
+
 
                                    FirebaseDatabase.getInstance().getReference().child("task")
                                            .child(getRef(holder.getAdapterPosition()).getKey())
@@ -204,6 +232,10 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
 
 
 
+
+
+
+
     }
 
 
@@ -218,7 +250,24 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
         return new myViewHolder(view);
 
     }
+    public void showDatePickerDialog(View v){
 
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                v.getContext() ,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();}
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+        calendar.set(year, month, dayOfMonth);
+        date = calendar.getTime();
+
+
+    }
 
 
     class myViewHolder extends RecyclerView.ViewHolder {
@@ -240,6 +289,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<TaskHelperClass,TaskAda
             month=itemView.findViewById(R.id.month);
             img=itemView.findViewById(R.id.img4);
             options=itemView.findViewById(R.id.options);
+
 
 
 

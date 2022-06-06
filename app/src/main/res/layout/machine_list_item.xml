@@ -9,9 +9,10 @@
     app:contentPadding="10dp"
     >
 
+
     <RelativeLayout
         android:layout_width="383dp"
-        android:layout_height="263dp"
+        android:layout_height="300dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
@@ -33,8 +34,6 @@
             app:civ_border_width="2dp" />
 
 
-
-
         <TextView
             android:id="@+id/etatf_txt"
             android:layout_width="match_parent"
@@ -48,10 +47,32 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/nbHeure_txt"
+            android:id="@+id/idMach_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/etatf_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="id Machine"
+            android:textColor="#061A88"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/nomAte_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idMach_txt"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img2"
+            android:text="Nom ateliers"
+            android:textColor="#061A88"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/nbHeure_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nomAte_txt"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@+id/img2"
             android:text="Nombre d'heure"
@@ -107,27 +128,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nbHeure_txt"
-            android:layout_marginLeft="-5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="100dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/editBtn"
-                android:layout_width="173dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="7dp"
-                android:background="@drawable/button_selector"
+                android:background="@drawable/rounded"
                 android:text="Modifier"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/deleteBtn"
-                android:layout_width="173dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/button_selector"
+                android:background="@drawable/rounded"
                 android:text="Supprimer"
                 android:textAllCaps="false" />
 
@@ -136,5 +159,6 @@
 
 
     </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>

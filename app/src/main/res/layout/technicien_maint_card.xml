@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="160dp"
+    android:layout_height="300dp"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/featured_imgg"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/nomTech_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:text="Nom Technicien"
+            android:textColor="#7E0000"
+            android:textSize="20sp" />
+
+
+
+        <TextView
+            android:id="@+id/phoneTech_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Numéro téléphone "
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/applerTech"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+
+            android:background="@drawable/button_selector"
+            android:shadowColor="#609298"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_baseline_phone_24"
+            app:iconTint="#009688"
+            app:rippleColor="#4C7874" />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

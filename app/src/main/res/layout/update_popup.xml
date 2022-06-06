@@ -77,6 +77,70 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:text="Nom atelier "
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:textSize="14sp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:background="@drawable/btn_border"
+            android:padding="10dp"
+            android:id="@+id/nomAtUt_txt"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Nom Chef équipe "
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:textSize="14sp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:background="@drawable/btn_border"
+            android:padding="10dp"
+            android:id="@+id/nomCheEqUt_txt"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Numéro du groupe "
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:textSize="14sp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:background="@drawable/btn_border"
+            android:padding="10dp"
+            android:id="@+id/numGrpUt_txt"
+            tools:ignore="MissingPrefix" />
+
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Email"
             tools:ignore="MissingPrefix" />
 
@@ -145,7 +209,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Mot de passe"
+            android:text="Cin"
             tools:ignore="MissingPrefix" />
 
         <EditText
@@ -158,6 +222,28 @@
             android:background="@drawable/btn_border"
             android:padding="10dp"
             android:id="@+id/txtPassword"
+            tools:ignore="MissingPrefix"
+            android:textColor="#0B154C"/>
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Url image"
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:textSize="14sp"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:background="@drawable/btn_border"
+            android:padding="10dp"
+            android:id="@+id/surlUt_txt"
             tools:ignore="MissingPrefix"
             android:textColor="#0B154C"/>
 

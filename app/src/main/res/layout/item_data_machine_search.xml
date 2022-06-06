@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="400dp"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/featured_imggg"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/etatDeFoncMach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:text="Etat de fonction"
+            android:textColor="#000D7E"
+            android:textSize="20sp" />
+
+
+
+        <TextView
+            android:id="@+id/nomAtMach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ateliers"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/defPanneMach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type de panne "
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/nbrHeureMach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre d'heure en marche"
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/temps_pauseMach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temps de pause "
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/temps_remplissageMach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temps de remplissage "
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/lastUserModMach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="modifié par "
+            android:textColor="@color/card3"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

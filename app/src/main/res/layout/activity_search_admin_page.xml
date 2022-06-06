@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="searchAdmin.SearchAdmin"
+    android:paddingLeft="20dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/heading_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text=" Rechercher dans la base"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="602dp"
+            android:backgroundTint="#FFFEFE"
+            app:srcCompat="@drawable/search_admin_icon" />
+
+        <EditText
+            android:id="@+id/search_filed"
+            android:layout_width="287dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/heading_label"
+            android:layout_alignStart="@+id/heading_label"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/search_layout"
+            android:ems="10"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:text="Rechercher"
+            android:textColor="#999999"
+            android:textSize="16sp"
+            android:typeface="normal" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_filed"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdAtelier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="Nom atelier" />
+
+            <RadioButton
+                android:id="@+id/rdMachine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="Nom machine" />
+
+            <RadioButton
+                android:id="@+id/rdUtilisateur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="Nom employé" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/ajouterAt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="Ajouter une" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/anton"
+                    android:letterSpacing="0.1"
+                    android:text="Les ateliers"
+                    android:textColor="#0B154C"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultListRecyclerAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@color/card3"
+                android:paddingLeft="20dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/machAjou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="Ajouter une" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/anton"
+                    android:letterSpacing="0.1"
+                    android:text="Les machines"
+                    android:textColor="#0B154C"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultListRecyclerMa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="#E0E9FA"
+                android:paddingLeft="20dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/user_ajout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="Ajouter un" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/anton"
+                    android:letterSpacing="0.1"
+                    android:text="Les employés"
+                    android:textColor="#0B154C"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultListRecyclerUt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:background="#E0E9FA">
+
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+</RelativeLayout>

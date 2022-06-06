@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import chef_maintenance_activities.TechnicienMaintenanceDash;
+import searchAdmin.SearchAdmin;
 import task.AddTask;
 import task.MainTask;
 
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(MainActivity.this, MainTask.class);
+                Intent intent=new Intent(MainActivity.this, SearchAdmin.class);
                 startActivity(intent);
                 finish();
             }
