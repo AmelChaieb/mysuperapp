@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 import chef_maintenance_activities.TechnicienMaintenanceDash;
+import task.MainTask;
 
 public class Login extends AppCompatActivity {
     Button loginBtn, forgetPass;
@@ -48,7 +49,7 @@ public class Login extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.loginBtn);
-        forgetPass = findViewById(R.id.forget_pass);
+
         usernameEditText=findViewById(R.id.login_user_name_editText);
         passwordEditText=findViewById(R.id.login_password_editText);
         rememberMe=findViewById(R.id.remember_me);
@@ -136,7 +137,7 @@ public class Login extends AppCompatActivity {
                    String statutUser =snapshot.child(userEnteredPassword).child("statut").getValue(String.class);
 
                     if (passwordFromDB != null) {
-                        if (passwordFromDB.equals(userEnteredPassword) && statutUser.equals("admin")) {
+                        if (passwordFromDB.equals(userEnteredPassword) && Objects.equals(statutUser, "ouvrier")) {
                             password.setError(null);
                             password.setErrorEnabled(false);
 
@@ -148,13 +149,18 @@ public class Login extends AppCompatActivity {
                                 String _password=snapshot.child(userEnteredPassword).child("password").getValue(String.class);
                                 String _phoneNo=snapshot.child(userEnteredPassword).child("phoneNo").getValue(String.class);
                                 String _statut=snapshot.child(userEnteredPassword).child("statut").getValue(String.class);
+                                String _nomAtelier=snapshot.child(userEnteredPassword).child("nomAtelier").getValue(String.class);
+                                String _nomChefEquipe=snapshot.child(userEnteredPassword).child("nomChefEquipe").getValue(String.class);
+                                String _numGroup=snapshot.child(userEnteredPassword).child("numGroup").getValue(String.class);
+
+
 
                                 SessionManager sessionManager=new SessionManager(Login.this,SessionManager.SSESSIONN_USERSESSION);
-                                sessionManager.createLoginSession(_fullname);
+                                sessionManager.createLoginSession(_fullname,_email,_password,_phoneNo,_statut,_nomAtelier,_nomChefEquipe,_numGroup);
                                 //Intent intent = new Intent(Login.this, Admin.class);
-                                startActivity(new Intent(getApplicationContext(),UpdateProfile.class));
+                                startActivity(new Intent(getApplicationContext(), TechnicienMaintenanceDash.class));
 
-                            Toast.makeText(Login.this, _fullname+"\n"+_email+"\n"+_phoneNo+"\n"+_statut, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, _numGroup+"\n", Toast.LENGTH_SHORT).show();
 
 
 
@@ -165,8 +171,8 @@ public class Login extends AppCompatActivity {
                         else {
                             password.setError(null);
                             password.setErrorEnabled(false);
-                            Intent intent = new Intent(Login.this, TechnicienMaintenanceDash.class);
-                            startActivity(intent);
+                           // Intent intent = new Intent(Login.this, TechnicienMaintenanceDash.class);
+                           // startActivity(intent);
 
 
                         }

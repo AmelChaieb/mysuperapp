@@ -41,7 +41,7 @@ public class AddAteliers extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AddAteliers.this, AteliersList.class);
+                Intent intent=new Intent(AddAteliers.this, SearchAdmin.class);
                 startActivity(intent);
             }
         });

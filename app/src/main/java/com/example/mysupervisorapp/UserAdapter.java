@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,7 +78,8 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
                 EditText email=view.findViewById(R.id.txtEmail);
                 EditText phone=view.findViewById(R.id.txtPhoneNo);
                 EditText statut=view.findViewById(R.id.txtStatut);
-                EditText nom_at=view.findViewById(R.id.nomAtUt_txt);
+                Spinner spinnerAt=view.findViewById(R.id.spin_atelier_emp);
+
                 EditText numGrp=view.findViewById(R.id.numGrpUt_txt);
                 EditText cin=view.findViewById(R.id.txtPassword);
                 EditText nomChef_at=view.findViewById(R.id.nomCheEqUt_txt);
@@ -90,7 +92,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
                 statut.setText(model.getStatut());
                 phone.setText(model.getPhoneNo());
                 cin.setText(model.getPassword());
-                nom_at.setText(model.getNomAtelier());
+                //nom_at.setText(model.getNomAtelier());
                 numGrp.setText(model.getNumGroupe());
                 nomChef_at.setText(model.getNomChefEquipe());
 
@@ -100,14 +102,15 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel,UserAdapter.m
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        String spinnerA = spinnerAt.getSelectedItem().toString();
                         Map<String,Object> map= new HashMap<>();
                         map.put("name", name.getText().toString());
                         map.put("email", email.getText().toString());
                         map.put("statut", statut.getText().toString());
                         map.put("password", cin.getText().toString());
                         map.put("nomChefEquipe", nomChef_at.getText().toString());
-                        map.put("nomAtelier", nom_at.getText().toString());
-                        map.put("NumGroupe", numGrp.getText().toString());
+                        map.put("nomAtelier", spinnerA);
+                        map.put("numGroup", numGrp.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("users")
                                 .child(getRef(holder.getAdapterPosition()).getKey())

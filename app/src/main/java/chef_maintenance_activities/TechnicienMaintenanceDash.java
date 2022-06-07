@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.mysupervisorapp.Login;
 import com.example.mysupervisorapp.MachineAdapter;
 import com.example.mysupervisorapp.MachineModel;
 import com.example.mysupervisorapp.R;
@@ -34,7 +38,7 @@ public class TechnicienMaintenanceDash extends AppCompatActivity {
         nomUt=findViewById(R.id.nom_user);
 
 
-        SessionManager sessionManager=new SessionManager(TechnicienMaintenanceDash.this,SessionManager.SESSION_USERSESSION);
+        SessionManager sessionManager=new SessionManager(TechnicienMaintenanceDash.this,SessionManager.SSESSIONN_USERSESSION);
         HashMap<String,String> userDetails =sessionManager.getUserDetailFromSession();
 
 
@@ -56,6 +60,20 @@ public class TechnicienMaintenanceDash extends AppCompatActivity {
 
         techTacheMaintAdapter = new TechTacheMaintAdapter(options);
         maintaskRecycler.setAdapter(techTacheMaintAdapter);
+
+        ImageButton logoutbtn;
+        logoutbtn = findViewById(R.id.logoutMaint);
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSharedPreferences("UserPref", AppCompatActivity.MODE_PRIVATE).edit().clear().apply();
+                //finish()
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 

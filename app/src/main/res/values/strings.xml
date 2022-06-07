@@ -44,6 +44,12 @@
     </array>
 
 
+    <array name="atelierEmp">
+        <item>lavage</item>
+        <item>teinture</item>
+    </array>
+
+
     <string name="rech">Rechercher</string>
 
 

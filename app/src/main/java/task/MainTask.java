@@ -18,8 +18,11 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.mysupervisorapp.R;
+import com.example.mysupervisorapp.SessionManager;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class MainTask extends AppCompatActivity {
     RecyclerView taskRecycler;
@@ -39,13 +42,29 @@ public class MainTask extends AppCompatActivity {
         noDataImage=findViewById(R.id.noDataImage);
 
 
+        // SessionManager sessionManager=new SessionManager(UpdateProfile.this,SessionManager.SESSION_USERSESSION);
+        //        HashMap<String,String> userDetails =sessionManager.getUserDetailFromSession();
+        //
+        //
+        //
+        //        //Toast.makeText(UpdateProfile.this, fullname+"\n"+phoneNo, Toast.LENGTH_SHORT).show();
+        //        textView.setText(userDetails.get(SessionManager.KEY_FULLNAME));
+
+
        // Glide.with(getApplicationContext()).load(R.drawable.first_note).into(noDataImage);
 
+        SessionManager sessionManager=new SessionManager(MainTask.this,SessionManager.SSESSIONN_USERSESSION);
+        HashMap<String,String> userDetails =sessionManager.getUserDetailFromSession();
+
+
+
         taskRecycler.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        String numGroup=userDetails.get(SessionManager.KEY_NOMCHEFEQUIPE);
+        Toast.makeText(MainTask.this,numGroup+"",Toast.LENGTH_LONG).show();
 
         FirebaseRecyclerOptions<TaskHelperClass> options =
                 new FirebaseRecyclerOptions.Builder<TaskHelperClass>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("task"), TaskHelperClass.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("task").orderByChild("nomChefEquipe").equalTo(numGroup), TaskHelperClass.class)
                         .build();
 
 

@@ -8,59 +8,28 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:paddingLeft="20dp"
-    tools:context="chef_maintenance_activities.TechnicienMaintenanceDash"
+    tools:context="task.MainTask"
     >
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/arrowBtnAt"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/arrow"
+                android:background="@color/white"/>
 
 
 
 
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Bienvenue"
-                android:layout_marginTop="20dp"
-                android:textColor="#1F2020"
-                android:textSize="23sp"/>
-
-                <ImageButton
-                    android:id="@+id/logoutMaint"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="240dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/logout"/>
-
-
-
-
-            </LinearLayout>
-
-
-            <TextView
-                android:id="@+id/nom_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Nom utulisateur"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="2.5dp"
-                android:textColor="#74797C"
-                android:textSize="18sp"/>
 
 
 
@@ -99,7 +68,7 @@
 
 
                 <EditText
-                    android:id="@+id/search_filed_m"
+                    android:id="@+id/search_filed_ap"
                     android:layout_width="262dp"
                     android:layout_height="35dp"
 
@@ -118,7 +87,7 @@
                     android:typeface="normal" />
 
                 <ImageButton
-                    android:id="@+id/search_btn_m"
+                    android:id="@+id/search_btn_ap"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_alignParentStart="true"
@@ -140,14 +109,14 @@
                     android:gravity="center">
 
                     <RadioGroup
-                        android:id="@+id/rdgrp_m"
+                        android:id="@+id/rdgrp_ap"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginLeft="35dp"
                         >
                         <RadioButton
-                            android:id="@+id/rdatelier_m"
+                            android:id="@+id/rdatelier_ap"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Atelier"
@@ -165,7 +134,7 @@
 
 
                         <RadioButton
-                            android:id="@+id/rdDate_m"
+                            android:id="@+id/rdDate_ap"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -181,7 +150,7 @@
                             android:textSize="12sp" />
 
                         <RadioButton
-                            android:id="@+id/rdtxt_m"
+                            android:id="@+id/rdtxt_ap"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Text"
@@ -197,7 +166,7 @@
                             android:padding="15dp"/>
 
                         <RadioButton
-                            android:id="@+id/rdWarning_m"
+                            android:id="@+id/rdWarning_ap"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Status"
@@ -251,21 +220,13 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/mainttaskRecycler"/>
+                android:id="@+id/adminPanneRecycler"/>
 
 
 
 
         </FrameLayout>
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/nav_bar_maint"
-            android:layout_marginBottom="25dp"
-            app:itemTextColor="@color/black"
-            app:itemIconTint="@color/colorAccent"
-            app:menu="@menu/menu_navigation"
-            />
+
 
 
 

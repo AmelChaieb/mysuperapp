@@ -23,10 +23,17 @@
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp">
 
+        <ImageButton
+            android:id="@+id/arrowBtnAt"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/arrow"
+            android:background="@color/white"/>
+
+
 
 
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -34,7 +41,7 @@
             android:letterSpacing="0.1"
             android:text="Mise à jour sur les machines"
             android:textColor="#0B154C"
-            android:textSize="30sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             android:transitionName=""/>
 
@@ -45,7 +52,7 @@
             android:text="Ajouter une machine"
             android:textColor="#7B879E"
             android:textSize="18sp"
-            android:layout_marginTop="-12dp"/>
+            />
 
 
 
@@ -53,7 +60,8 @@
             android:id="@+id/spin_1"
             android:layout_width="match_parent"
             android:layout_height="46dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="40dp"
+
             android:entries="@array/etat_de_fonct"/>
 
 
@@ -74,6 +82,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_nbHeure"
             android:hint="Nombre d'heure"
+            android:layout_marginTop="5dp"
+            android:background="#F3F3F3"
 
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -89,7 +99,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/reg_pause"
+            android:background="#F3F3F3"
             android:hint="Temps de pause"
+            android:layout_marginTop="5dp"
 
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -106,6 +118,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_remplissage"
             android:hint="Temps de remplissage"
+            android:background="#F3F3F3"
+            android:layout_marginTop="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -120,6 +134,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_nameAt"
             android:hint="Nom atelier"
+            android:layout_marginTop="5dp"
+            android:background="#F3F3F3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
         <com.google.android.material.textfield.TextInputEditText
@@ -134,6 +150,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_surlMa"
             android:hint="url image"
+            android:background="#F3F3F3"
+            android:layout_marginTop="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -147,6 +165,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_userlastmod"
             android:hint="modifier par"
+            android:background="#F3F3F3"
+            android:layout_marginTop="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -161,6 +181,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_idMachine"
             android:hint="Nom machine"
+            android:background="#F3F3F3"
+            android:layout_marginTop="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -176,11 +198,14 @@
         android:onClick="Ajout"
         <Button
             android:id="@+id/reg_btnA"
+            android:layout_width="300dp"
+            android:gravity="center"
             android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_selector"
+            android:background="@drawable/rounded"
             android:onClick="Ajout"
+            android:layout_marginBottom="10dp"
 
             android:text="Ajouter"
             android:textColor="#E0E9FA"/>

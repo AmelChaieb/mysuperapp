@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="20dp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingLeft="20dp"
+    tools:context="task.TaskAdminList"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tout les tâches"
+                fontPath="fonts/nunito_extra_bold.ttf"
+                android:fontFamily="@font/anton"
+                android:letterSpacing="0.1"
+
+                android:textStyle="bold"
+                android:textColor="#0B154C"
+                android:textSize="30sp"
+                tools:ignore="MissingPrefix" />
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:id="@+id/noDataImage"
+                android:layout_gravity="center"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/taskRecyclerAdmin"/>
+
+        </FrameLayout>
+
+        android:onClick="addTask"
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="Ajouter tâche"
+            android:drawablePadding="10dp"
+            android:paddingTop="10dp"
+            android:id="@+id/addTask"
+            android:layout_gravity="center"
+            android:textColor="#0B154C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            android:letterSpacing="0.1"
+            android:drawableLeft="@drawable/ic_add_black_24dp"
+            android:textAlignment="center"
+            android:layout_weight="0.5"
+            android:layout_marginBottom="20dp"
+            android:onClick="addTask"/>
+
+    </LinearLayout>
+
+</LinearLayout>

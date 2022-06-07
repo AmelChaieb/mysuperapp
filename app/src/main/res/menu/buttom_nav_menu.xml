@@ -4,6 +4,7 @@
     <item
         android:id="@+id/button_nav_dashboard"
         android:title="Accueil"
+        android:onClick="ClickDash"
         android:icon="@drawable/button_nav_dashboard_icon"
         app:cnb_backgroundColor="@color/card4"/>
 
@@ -11,12 +12,14 @@
     <item
         android:id="@+id/button_nav_profile"
         android:title="profile"
+        android:onClick="ClickPro"
         android:icon="@drawable/button_nav_profile_icon"
         app:cnb_backgroundColor="@color/card4"/>
 
     <item
         android:id="@+id/button_nav_stat"
         android:title="notes"
+        android:onClick="ClickEdit"
         android:icon="@drawable/edit"
         app:cnb_backgroundColor="@color/card4"/>
 

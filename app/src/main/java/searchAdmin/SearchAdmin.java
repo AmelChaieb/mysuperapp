@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mysupervisorapp.AddAteliers;
 import com.example.mysupervisorapp.AtelierHelperClass;
@@ -27,6 +28,7 @@ import com.example.mysupervisorapp.MainActivity;
 import com.example.mysupervisorapp.R;
 import com.example.mysupervisorapp.TechnicienMaintAdapter;
 import com.example.mysupervisorapp.TechnicienMaintenanceHelper;
+import com.example.mysupervisorapp.UserAdapter;
 import com.example.mysupervisorapp.UserHelperClass;
 import com.example.mysupervisorapp.UserModel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -43,6 +45,8 @@ public class SearchAdmin extends AppCompatActivity {
     EmployerSearchAdapter employerSearchAdapter;
     FirebaseDatabase database;
     DatabaseReference databaseReferenceAt, databaseReferenceMa,databaseReferenceEp;
+    UserAdapter userAdapter;
+
     RadioButton nomAtelier,nomMachine, nomEmploye;
     AtelierSearchAdapter atelierSearchAdapter;
     TextView ajouterUA;
@@ -57,13 +61,15 @@ public class SearchAdmin extends AppCompatActivity {
         databaseReferenceAt=database.getReference("ateliers");
         databaseReferenceMa=database.getReference("machine");
         databaseReferenceEp=database.getReference("users");
-
+        nomAtelier=findViewById(R.id.rdate);
+        nomEmploye=findViewById(R.id.rdEmp);
+        nomMachine=findViewById(R.id.rdMach);
+        searchBtn=findViewById(R.id.search_btn);
         search=findViewById(R.id.search_filed);
-        searchBtn=findViewById(R.id.searchButton);
 
-        nomAtelier=findViewById(R.id.rdAtelier);
-        nomMachine=findViewById(R.id.rdMachine);
-        nomEmploye=findViewById(R.id.rdUtilisateur);
+
+
+
 
         recyclerView =findViewById(R.id.resultListRecyclerMa);
         userRecycler=findViewById(R.id.resultListRecyclerUt);
@@ -81,34 +87,20 @@ public class SearchAdmin extends AppCompatActivity {
 
 
 
-        searchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                search.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                    }
+      searchBtn.setOnClickListener(new View.OnClickListener() {
 
-                    @Override
-                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+          String searchText=search.getText().toString();
+          @Override
+          public void onClick(View v) {
 
-                    }
+              search(searchText);
+              Toast.makeText(SearchAdmin.this, searchText+"", Toast.LENGTH_SHORT).show();
 
-                    @Override
-                    public void afterTextChanged(Editable editable) {
-
-                        if (nomEmploye.isChecked()){
-                            search();
-                        }
+          }
+      });
 
 
-                    }
-                });
-
-
-            }
-        });
 
         atelierListResult();
         machineListResult();
@@ -121,23 +113,28 @@ public class SearchAdmin extends AppCompatActivity {
 
     }
 
-    private void search() {
-        String query=search.getText().toString().toUpperCase();
-        Query search=databaseReferenceEp.orderByChild("name").startAt(query).endAt(query+"\uf0ff");
+    private void search( String searchText) {
 
+       // userRecycler.setHasFixedSize(true);
+       // userRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+       // String query=search.getText().toString().toUpperCase();
+       // Query search=databaseReferenceEp.orderByChild("name").startAt(query).endAt(query+"\uf0ff");
 
         FirebaseRecyclerOptions<UserHelperClass> options =
                 new FirebaseRecyclerOptions.Builder<UserHelperClass>()
-                        .setQuery(search, UserHelperClass.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("users").orderByChild("name").startAt(searchText).endAt(searchText + "~"), UserHelperClass.class)
                         .build();
 
         employerSearchAdapter = new EmployerSearchAdapter(options);
         userRecycler.setAdapter(employerSearchAdapter);
+        employerSearchAdapter.startListening();
+
     }
 
     private void userListResult() {
+       // userRecycler.setLayoutManager(new LinearLayoutManager(this));
         userRecycler.setHasFixedSize(true);
-        userRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+       userRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         FirebaseRecyclerOptions<UserHelperClass> options =
                 new FirebaseRecyclerOptions.Builder<UserHelperClass>()
@@ -194,6 +191,6 @@ public class SearchAdmin extends AppCompatActivity {
 
         atelierSearchAdapter.stopListening();
         atelierSearchMachineAdapter.stopListening();
-        employerSearchAdapter.startListening();
+        employerSearchAdapter.stopListening();
     }
 }

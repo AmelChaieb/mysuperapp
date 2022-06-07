@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySupervisorApp">
         <activity
+            android:name=".AdminPanneSupv"
+            android:exported="false" />
+        <activity
+            android:name="task.TaskAdminList"
+            android:exported="false" />
+        <activity
+            android:name="chef_maintenance_activities.ChefMaintenanceDashb"
+            android:exported="false" />
+        <activity
             android:name="chef_atelier_activities.MainActChefAt"
             android:exported="false" />
         <activity

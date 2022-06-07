@@ -13,12 +13,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="30dp"
-            android:paddingBottom="50dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp">
 
             <ImageButton
                 android:id="@+id/arrowBtnTask"
@@ -45,66 +43,67 @@
                 tools:ignore="MissingPrefix" />
 
             <TextView
+                android:id="@+id/addTaskTitle"
                 fontPath="fonts/nunito_light.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:text="Remplir les champs vides pour ajouter une tâche"
-                android:textAlignment="center"
+
                 android:textColor="#7B879E"
                 android:alpha="0.8"
                 android:textSize="18sp"
                 tools:ignore="MissingPrefix" />
 
-            <TextView
-                android:layout_marginLeft="3dp"
-                fontPath="fonts/nunito_light.ttf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Titre "
-                tools:ignore="MissingPrefix" />
-
-            <EditText
-                android:textSize="14sp"
-                fontPath="fonts/nunito_light.ttf"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:background="@drawable/btn_border"
-                android:padding="10dp"
-                android:id="@+id/addTaskTitle"
-                tools:ignore="MissingPrefix" />
-
-            <TextView
+                android:id="@+id/reg_Atelier"
+                android:hint="Titre"
                 android:layout_marginLeft="3dp"
-                fontPath="fonts/nunito_light.ttf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:background="#F3F3F3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="30dp"
-                android:text="Description"
-                tools:ignore="MissingPrefix" />
+                >
 
-            <EditText
-                android:textSize="14sp"
-                fontPath="fonts/nunito_light.ttf"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:background="@drawable/btn_border"
-                android:padding="10dp"
                 android:id="@+id/addTaskDescription"
-                tools:ignore="MissingPrefix" />
-            <TextView
+                android:hint="Description"
                 android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="#F3F3F3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="7dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
                 fontPath="fonts/nunito_light.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="10dp"
                 android:text="Date"
+                android:textSize="15sp"
                 tools:ignore="MissingPrefix" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -120,97 +119,93 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:singleLine="true"
-                    android:background="@drawable/btn_border"
+                    android:background="@drawable/rounded"
                     android:padding="10dp"
                     android:id="@+id/taskDate"
                     tools:ignore="MissingPrefix"
                     android:editable="false"/>
 
                 <Button
-                    android:layout_width="64dp"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
                     android:layout_marginLeft="5dp"
                     android:text="Date"
                     android:textSize="10dp"
+                    android:background="@drawable/rounded"
                     android:id="@+id/dateBtn"/>
             </LinearLayout>
 
-            <TextView
-                android:layout_marginLeft="3dp"
-                fontPath="fonts/nunito_light.ttf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Nom du Groupe concerné"
-                tools:ignore="MissingPrefix" />
 
-            <EditText
-                android:textSize="14sp"
-                fontPath="fonts/nunito_light.ttf"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:background="@drawable/btn_border"
-                android:padding="10dp"
                 android:id="@+id/taskGroup"
-                tools:ignore="MissingPrefix"
-                android:textColor="#04CC3A"/>
-
-            <TextView
+                android:hint="ID du Groupe concerné"
                 android:layout_marginLeft="3dp"
-                fontPath="fonts/nunito_light.ttf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Nom du Chef d'équipe"
-                tools:ignore="MissingPrefix" />
+                android:layout_marginRight="3dp"
+                android:background="#F3F3F3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="10dp"
+                >
 
-            <EditText
-                android:textSize="14sp"
-                fontPath="fonts/nunito_light.ttf"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:background="@drawable/btn_border"
-                android:padding="10dp"
-                android:id="@+id/taskCE"
-                tools:ignore="MissingPrefix"
-                android:textColor="#A11A15"/>
-
-            <TextView
-                android:layout_marginLeft="3dp"
-                fontPath="fonts/nunito_light.ttf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Nom de l'atelier concerné"
-                tools:ignore="MissingPrefix" />
-
-            <EditText
-                android:textSize="14sp"
-                fontPath="fonts/nunito_light.ttf"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:background="@drawable/btn_border"
-                android:padding="10dp"
                 android:id="@+id/taskAtelier"
-                tools:ignore="MissingPrefix"
-                android:textColor="#0B154C"/>
+                android:hint="Nom de l'atelier concerné"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="#F3F3F3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="10dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/taskCE"
+                android:hint="Nom du Chef d'équipe"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="#F3F3F3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="10dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             android:onClick="Ajouter"
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/addTask"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 android:text="Ajouter"
                 android:onClick="Ajouter"
-                android:background="@drawable/button_selector"
-                android:textColor="@color/white"
+                android:background="@drawable/rounded"
+                android:textColor="#E0E9FA"
                 android:layout_marginTop="40dp" />
 
         </LinearLayout>

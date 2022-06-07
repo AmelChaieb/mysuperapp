@@ -9,10 +9,15 @@ public class SessionManager {
 
 
     public static final String SSESSIONN_USERSESSION = "userLoginSessionn";
+    public static final String SSESSIONN_USERSESSIONN = "userLoginSessionnn";
+
     SharedPreferences.Editor editor;
     SharedPreferences userSession;
 
     Context context;
+
+    //userSessionnn variables
+
 
 
     public static final String SESSION_USERSESSION="userLoginSession";
@@ -26,6 +31,11 @@ public class SessionManager {
     public static final String KEY_PASSWORD="password";
     public static final String KEY_PHONE="phoneNo";
     public static final String KEY_STATUT="statut";
+    public static final String KEY_NOMATELIER="nomAtelier";
+    public static final String KEY_NOMCHEFEQUIPE="nomChefEquipe";
+    public static final String KEY_NUMEROGROUP="numGroup";
+
+
 
 
     //remember me variables
@@ -51,25 +61,36 @@ public class SessionManager {
     session
      */
 
-    public void createLoginSession(String name){
+    public void createLoginSession(String name, String email, String password, String phoneNo, String statut, String nomAtelier,String nomChefEquipe, String numGroup){
 
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_FULLNAME,name);
-      //  editor.putString(KEY_EMAIL,email);
-        //editor.putString(KEY_PASSWORD,password);
-      //  editor.putString(KEY_PHONE,phoneNo);
-       // editor.putString(KEY_STATUT,statut);
+        editor.putString(KEY_EMAIL,email);
+        editor.putString(KEY_PASSWORD,password);
+        editor.putString(KEY_PHONE,phoneNo);
+        editor.putString(KEY_STATUT,statut);
+        editor.putString(KEY_NOMATELIER,nomAtelier);
+        editor.putString(KEY_NOMCHEFEQUIPE,nomChefEquipe);
+        editor.putString(KEY_NUMEROGROUP,numGroup);
 
         editor.commit();
     }
 
+
+
+
+
     public HashMap<String,String> getUserDetailFromSession(){
         HashMap<String,String> userData=new HashMap<>();
         userData.put(KEY_FULLNAME,userSession.getString(KEY_FULLNAME,null));
-        //userData.put(KEY_EMAIL,userSession.getString(KEY_EMAIL,null));
-        //userData.put(KEY_PASSWORD,userSession.getString(KEY_PASSWORD,null));
-       // userData.put(KEY_PHONE,userSession.getString(KEY_PHONE,null));
-       // userData.put(KEY_STATUT,userSession.getString(KEY_STATUT,null));
+        userData.put(KEY_EMAIL,userSession.getString(KEY_EMAIL,null));
+        userData.put(KEY_PASSWORD,userSession.getString(KEY_PASSWORD,null));
+        userData.put(KEY_PHONE,userSession.getString(KEY_PHONE,null));
+        userData.put(KEY_STATUT,userSession.getString(KEY_STATUT,null));
+        userData.put(KEY_NOMATELIER,userSession.getString(KEY_NOMATELIER,null));
+        userData.put(KEY_NUMEROGROUP,userSession.getString(KEY_NUMEROGROUP,null));
+        userData.put(KEY_NOMCHEFEQUIPE,userSession.getString(KEY_NOMCHEFEQUIPE,null));
+
 
         return userData;
 

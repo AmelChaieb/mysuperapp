@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:background="#FFFFFF"
     android:padding="20dp"
     tools:context=".AddWorker">
@@ -62,6 +61,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_name"
             android:hint="Nom complet"
+            android:layout_marginTop="7dp"
+            android:background="#F3F3F3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:startIconDrawable="@drawable/ic_baseline_person_24">
 
@@ -76,6 +77,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_statut"
             android:hint="statut"
+            android:layout_marginTop="7dp"
+            android:background="#F3F3F3"
             app:startIconDrawable="@drawable/ic_baseline_work_24"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -94,6 +97,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_email"
             android:hint="Email"
+            android:layout_marginTop="7dp"
+            android:background="#F3F3F3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:startIconDrawable="@drawable/ic_baseline_email_24">
 
@@ -110,6 +115,8 @@
             android:hint="numéro mobile"
             app:counterEnabled="true"
             app:counterMaxLength="8"
+            android:background="#F3F3F3"
+            android:layout_marginTop="7dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:startIconDrawable="@drawable/ic_baseline_phone_24">
 
@@ -124,7 +131,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_password"
             android:hint="CIN"
+            android:layout_marginTop="7dp"
             app:counterEnabled="true"
+            android:background="#F3F3F3"
             app:counterMaxLength="8"
             app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -136,24 +145,22 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <Spinner
+            android:id="@+id/spin_atelier_emp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/reg_atName"
-            android:hint="Nom atelier"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-           >
+            android:layout_height="53dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="5dp"
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:entries="@array/atelierEmp"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/reg_nameChefEq"
-            android:hint="Nom ChefEquipe"
+            android:hint="Nom Chef équipe"
+            android:layout_marginTop="7dp"
+            android:background="#F3F3F3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
 
@@ -168,8 +175,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_grpNum"
             android:hint="Numéro du groupe"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-           >
+            android:layout_marginTop="7dp"
+            android:background="#F3F3F3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -182,6 +190,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reg_surlEMp"
             android:hint="Url image"
+            android:layout_marginTop="7dp"
+            android:background="#F3F3F3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
 
@@ -198,10 +208,11 @@
     android:onClick="registerUser"
     <Button
         android:id="@+id/reg_btn"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:background="@drawable/rounded"
+        android:layout_gravity="center"
         android:onClick="registerUser"
         android:text="Ajouter"
         android:textColor="#E0E9FA"/>

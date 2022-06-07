@@ -3,15 +3,18 @@
     <item
         android:id="@+id/accueil_maint"
         android:title="Accueil"
+
         android:icon="@drawable/accueil"/>
 
     <item
         android:id="@+id/profile_maint"
-        android:title="profile"
-        android:icon="@drawable/button_nav_profile_icon"/>
+
+        android:title="notes"
+        android:icon="@drawable/edit"/>
 
     <item
         android:id="@+id/deco_maint"
+
         android:title="deconnexion"
         android:icon="@drawable/logout"/>
 

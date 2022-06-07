@@ -85,6 +85,9 @@ public class MachineList extends AppCompatActivity {
 
     private void txtSearch(String str) {
 
+
+
+
         FirebaseRecyclerOptions<MachineModel> options =
                 new FirebaseRecyclerOptions.Builder<MachineModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("machine").orderByChild("defPanne").startAt(str).endAt(str + "~"), MachineModel.class)

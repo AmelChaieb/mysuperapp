@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -17,11 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Locale;
+
 public class AddWorker extends AppCompatActivity {
     //variables
     TextInputLayout regName, regStatut, regEmail, regPhoneNo, regPassword, nomAtelier, numGrp,nomChef,surl;
     Button regBtn;
     ImageButton backBtn;
+    Spinner atelier;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -38,7 +42,7 @@ public class AddWorker extends AppCompatActivity {
         regEmail = findViewById(R.id.reg_email);
         regPhoneNo = findViewById(R.id.reg_phoneNo);
         regPassword = findViewById(R.id.reg_password);
-        nomAtelier=findViewById(R.id.reg_atName);
+        atelier=findViewById(R.id.spin_atelier_emp);
         numGrp=findViewById(R.id.reg_grpNum);
         nomChef=findViewById(R.id.reg_nameChefEq);
         surl=findViewById(R.id.reg_surlEMp);
@@ -77,13 +81,13 @@ public class AddWorker extends AppCompatActivity {
 
        private Boolean validateStatut(){
 
-        String val = regStatut.getEditText().getText().toString();
+        String val = regStatut.getEditText().getText().toString().toUpperCase(Locale.ROOT);
 
         if(val.isEmpty()){
             regName.setError("ce champs ne peut pas etre vide !");
             return false;
         }
-        else if(val.length()>=15){
+        else if(val.length()>=30){
             regName.setError("le statut est si long");
             return false;
         }
@@ -129,6 +133,8 @@ public class AddWorker extends AppCompatActivity {
               regPhoneNo.setErrorEnabled(false);
               return true;
            }
+
+
     }
 
     private Boolean validatePassword() {
@@ -146,6 +152,37 @@ public class AddWorker extends AppCompatActivity {
             regPassword.setErrorEnabled(false);
             return true;
         }
+
+
+    private Boolean validateNomChef() {
+        String val = nomChef.getEditText().getText().toString();
+
+
+
+        if (val.isEmpty()) {
+            nomChef.setError("Champs ne peut pas etre vide");
+            return false;
+        }
+        else {
+            nomChef.setError(null);
+            nomChef.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+        private Boolean validateNumGroupe() {
+            String val = numGrp.getEditText().getText().toString();
+
+
+            if (val.isEmpty()) {
+                numGrp.setError("Champs ne peut pas etre vide");
+                return false;
+            } else {
+                numGrp.setError(null);
+                numGrp.setErrorEnabled(false);
+                return true;
+            }
+        }
     //}
 
 
@@ -157,7 +194,7 @@ public class AddWorker extends AppCompatActivity {
 
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("users");
-        if(!validateName() |!validatePassword() | !validatePhoneNo() | !validateEmail() | !validateStatut())
+        if(!validateName() |!validatePassword() | !validatePhoneNo() | !validateEmail() | !validateStatut()| !validateNomChef()| !validateNumGroupe())
         {
             return;
         }
@@ -169,7 +206,7 @@ public class AddWorker extends AppCompatActivity {
         String email = regEmail.getEditText().getText().toString();
         String phoneNo = regPhoneNo.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
-        String nom_at = nomAtelier.getEditText().getText().toString();
+        String nom_at = atelier.getSelectedItem().toString();
         String nom_chef = nomChef.getEditText().getText().toString();
         String num_grp = numGrp.getEditText().getText().toString();
         String surll = surl.getEditText().getText().toString();

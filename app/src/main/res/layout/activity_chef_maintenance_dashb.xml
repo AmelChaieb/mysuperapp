@@ -4,9 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sartex_splash_screen"
-    tools:context=".MainActivity">
-
-
+    tools:context="chef_maintenance_activities.ChefMaintenanceDashb">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

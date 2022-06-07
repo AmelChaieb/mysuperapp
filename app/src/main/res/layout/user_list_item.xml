@@ -90,13 +90,11 @@
             android:textSize="18sp" />
 
 
-
-
         <TextView
             android:id="@+id/email_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/statut_txt"
+            android:layout_below="@id/phoneNumUt"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/img1"
             android:text="email id"
